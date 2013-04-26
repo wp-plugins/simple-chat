@@ -14,7 +14,7 @@ a chat based on google chat for logged users.
 
 a chat based on google chat for logged users.
 
-"Simplicity is the ultimate sophistication." -- Da Vinci
+"Simplicity is the ultimate sophistication." - Da Vinci
 
 
 == Installation ==
