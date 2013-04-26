@@ -17,7 +17,7 @@ a chat based on google chat for logged users.
 
 == Installation ==
 
-Upload plugin to your blog, activate it, then click on the Settings > Advanced on the menu.
+Upload plugin to your blog, activate it, then click on the Settings > Simple-chat on the menu.
 
 
 == Screenshots ==
