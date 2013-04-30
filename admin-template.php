@@ -3,9 +3,11 @@
 
 		<div style="float:right;width:400px">
 			<div style="float:right; margin-top:10px">
-				 <iframe src="http://www.facebook.com/plugins/like.php?href=<?php echo urlencode('http://wordpress.org/extend/plugins/simple-chat/') ?>&amp;layout=box_count&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=21"
+				 <iframe src="http://www.facebook.com/plugins/like.php?href=<?php echo urlencode(SIMPLE_CHAT_LIKE_URL) ?>&amp;layout=box_count&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=21"
 					scrolling="no" frameborder="0" style="overflow:hidden; width:90px; height:61px; margin:0 0 0 10px; float:right" allowTransparency="true"></iframe>
-					<strong style="line-height:25px;"><?php echo __('Do you like Simple Chat Plugin? '); ?></strong>
+					<strong style="line-height:25px;">
+						<?php echo __('Do you like <a href="'.SIMPLE_CHAT_LIKE_URL.'" target="_blank">Simple Chat</a> Plugin? '); ?>
+					</strong>
 			</div>
 		</div>
 
@@ -18,15 +20,6 @@
 			
 			<table class="form-table">
 				<!--tr valign="top">
-					<th scope="row">Show chat in admin</th>
-					<td>
-						<label for="sra_show_posts_at_home">
-							<input name="sra_show_posts_at_home" type="checkbox" id="sra_show_posts_at_home" value="1" <?php if(get_option('sra_show_posts_at_home')) echo 'checked="checked"' ?> />
-							
-						</label>
-					</td>
-				</tr>
-				<tr valign="top">
 					<th scope="row">Smiles</th>
 					<td>
 						<label for="sra_show_posts_at_home">

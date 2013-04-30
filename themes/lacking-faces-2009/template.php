@@ -14,7 +14,7 @@
 				</label>
 			</div>
 			<div class="chat_window">
-				<div class="win_titlebar">
+				<div class="win_titlebar" style="background-color:<?php echo get_option( 'schat_color', SIMPLE_CHAT_DEFAULT_COLOR ); ?>">
 					<label class="close close_button">
 						<span>&times;</span>
 					</label>
@@ -65,7 +65,7 @@
 					</span>
 				</div>
 				<div class="chat_window">
-					<div class="win_titlebar">
+					<div class="win_titlebar" style="background-color:<?php echo get_option( 'schat_color', SIMPLE_CHAT_DEFAULT_COLOR ); ?>">
 						<label title="Minimize" class="minimize">
 							<span>_</span>
 						</label>

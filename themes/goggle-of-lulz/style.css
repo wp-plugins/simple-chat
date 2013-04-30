@@ -59,6 +59,7 @@
     position:relative;
     z-index:10;
     cursor: pointer;
+    margin-left:4px;
 }
 .rule{
    
@@ -83,18 +84,19 @@
 
 /* when chat box is open*/
 .open_toggler .chat_button{
-    display:none;
+    visibility:hidden;
+    width:208px;
 }
 /*chat box*/
 .chat_window{
     background-color:#fff;
     border-bottom:1px solid #ccc;
-    bottom:-26px;
+    bottom:-1px;
     display:none;
     position:absolute;
     width:220px;
     left:auto;
-    right:-1px;
+    right:0;
 }
 .open_toggler .chat_window{display: block; border-radius:5px 5px 0 0;}
 /*for buddylist*/

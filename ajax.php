@@ -249,7 +249,7 @@ function schat_get_updates_for_user() {
 		$channels[$key]->userdata = array(
 			'id'		=> $channel->user_id,
 			'name'		=> $userdata->display_name,
-			'thumbnail' => get_gravatar_url( $channel->user_id ),
+			'thumbnail' => get_gravatar_url( $userdata->user_email ),
 			'status' 	=> schat_get_user_status( $channel->last_active_time, $channel->is_online ),
 		);
 		

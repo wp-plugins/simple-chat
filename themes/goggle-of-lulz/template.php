@@ -4,7 +4,7 @@
 	<div id="schat_base">
 		<!--chat template-->
 		<div id="chat_template" class="chat_tab disabled">
-			<div  class="chat_button">
+			<div  class="chat_button" style="background-color:<?php echo get_option( 'schat_color', SIMPLE_CHAT_DEFAULT_COLOR ); ?>; border-color:<?php echo get_option( 'schat_color', SIMPLE_CHAT_DEFAULT_COLOR ); ?>">
 				<span class="tab_name">
 					some_name
 				</span>
@@ -14,7 +14,7 @@
 				</label>
 			</div>
 			<div class="chat_window">
-				<div class="win_titlebar">
+				<div class="win_titlebar" style="background-color:<?php echo get_option( 'schat_color', SIMPLE_CHAT_DEFAULT_COLOR ); ?>; border-color:<?php echo get_option( 'schat_color', SIMPLE_CHAT_DEFAULT_COLOR ); ?>">
 					<label class="close close_button">
 						<span>&times;</span>
 					</label>
@@ -59,13 +59,13 @@
 		<!-- end of tab slider-->
 		<div class="chat_buddylist" id="chat_buddylist">
 			<div id="settings_tab" class="chat_tab" >
-				<div  class="chat_button">
+				<div  class="chat_button" style="background-color:<?php echo get_option( 'schat_color', SIMPLE_CHAT_DEFAULT_COLOR ); ?>; border-color:<?php echo get_option( 'schat_color', SIMPLE_CHAT_DEFAULT_COLOR ); ?>">
 					<span class="tab_name">
 					Online (<span class="online_count"><?php echo schat_get_online_users_count();?></span>)
 					</span>
 				</div>
 				<div class="chat_window">
-					<div class="win_titlebar">
+					<div class="win_titlebar" style="background-color:<?php echo get_option( 'schat_color', SIMPLE_CHAT_DEFAULT_COLOR ); ?>; border-color:<?php echo get_option( 'schat_color', SIMPLE_CHAT_DEFAULT_COLOR ); ?>">
 						<label title="Minimize" class="minimize">
 							<span>_</span>
 						</label>

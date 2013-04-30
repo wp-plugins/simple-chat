@@ -2,15 +2,6 @@
 
 defined( 'ABSPATH' ) or exit; // prevent direct access
 
-// get id users list
-if( !function_exists('friends_get_friend_user_ids') ):
-function friends_get_friend_user_ids( $user_id, $friend_requests_only = false, $assoc_arr = false ) {
-	global $wpdb;
-
-	return $wpdb->get_col( "SELECT ID as user_id FROM $wpdb->users -- ORDER BY user_registered DESC" );
-}
-endif;
-
 // on plugin activation install tables in database
 function schat_activation() {
 	require_once dirname(__FILE__).'/install.php';
@@ -53,9 +44,14 @@ function schat_ajaxurl() {
 	echo '<script type="text/javascript">var ajaxurl = "'. admin_url('admin-ajax.php') .'";</script>';
 }
 
-function get_gravatar_url( $email ) {
+// get avatar url
+function get_gravatar_url( $email, $size=42 ) {
+	
+	$host = 'http://gravatar.com/avatar';
     $hash = md5( strtolower( trim ( $email ) ) );
-    return 'http://gravatar.com/avatar/' . $hash;
+    $default = get_option( 'avatar_default', 'mystery' );
+
+    return $host . '/' . $hash . '?s=' . $size . '&d=mm';
 }
 
 function schat_get_user_displayname( $user_id ) {
@@ -163,21 +159,16 @@ function schat_soundmanager_settings(){
 	<?php
 }
 
+// load styles
 function schat_load_css(){
-	
 	if(is_user_logged_in())
 		wp_enqueue_style( 'chatcss', SIMPLE_CHAT_URL.'/themes/'.SIMPLE_CHAT_THEME.'/style.css' );
-	
-	if( $color=get_option( 'schat_color', '#333' ) )
-		echo '<style type="text/css">#schatbar .win_titlebar {background-color:'.$color.'} </style>';
-	
-	if( SIMPLE_CHAT_THEME=='goggle-of-lulz' )
-		echo '<style type="text/css">#schatbar .chat_button {border-color:'.$color.'; background-color:'.$color.'} #schatbar .win_titlebar {border-color:'.$color.'} </style>';
 }
 
+// load scripts
 function schat_load_js(){
 //if user is online, load the javascript
-    if(is_user_logged_in()&&!is_admin()){//has issues while loading on admin pages a 0 is appeneded still not sure why ?
+    if( is_user_logged_in() ){//has issues while loading on admin pages a 0 is appeneded still not sure why ?
         
         wp_enqueue_script( 'json2' );
         wp_enqueue_script( 'jquery' );
