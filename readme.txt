@@ -6,7 +6,7 @@ Tags: chat, ajax, facebook, google plus, talk, google talk, bate-papo, facebook 
 License: GPLv2 or later
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 
 a simple chat based on google chat for logged users.
 
@@ -30,6 +30,9 @@ Upload plugin to your blog, activate it, then click on the Settings > Simple-cha
 
 
 == Changelog ==
+
+= 1.0.2 =
+* Comment some filters in admin mode
 
 = 1.0.1 =
 * Fix a BuddyPress bug removing a useless function

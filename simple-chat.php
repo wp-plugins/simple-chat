@@ -5,7 +5,7 @@ Plugin URI: http://tutzstyle.com/portfolio/simple-chat-plugin-para-wordpress/
 Author URI: http://tutzstyle.com/
 Description:  a chat based on facebook chat, works only for registred and logged users.
 Author: Arthur Araújo
-Version: 1.0.1
+Version: 1.0.2
 
 */
 
@@ -51,9 +51,9 @@ add_action( 'wp_print_scripts', 'schat_load_js');
 
 //load the chat bar when the user is logged in
 add_action( 'wp_footer', 'schat_show_template');
-add_action( 'admin_footer', 'schat_show_template');
+//add_action( 'admin_footer', 'schat_show_template');
 
 add_action("wp_print_styles","schat_load_css");
-add_action("admin_print_styles","schat_load_css");
+//add_action("admin_print_styles","schat_load_css");
 
 register_activation_hook( __FILE__, 'schat_activation' );
