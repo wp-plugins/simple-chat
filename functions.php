@@ -16,10 +16,10 @@ function schat_show_template() {
 }
 
 // load all necessery functions
-function schat_load_files_and_setup() {
+function schat_initialize() {
 	
-    if( !is_user_logged_in () )
-        return;
+    if( !is_user_logged_in() )
+		return;
 
 	global $wpdb;
 	
@@ -29,7 +29,7 @@ function schat_load_files_and_setup() {
     $wpdb->channel_users = $wpdb->prefix.SIMPLE_CHAT_DB_CHANNEL_USERS;
     $wpdb->chat_messages = $wpdb->prefix.SIMPLE_CHAT_DB_USER_MESSAGES;
 
-	require( SIMPLE_CHAT_PLUGIN_DIR. 'ajax.php' );
+	require_once( SIMPLE_CHAT_PLUGIN_DIR. 'ajax.php' );
 	
 	if( !defined('DOING_AJAX') )
 		schat_update_last_active();//update last active time for user
@@ -37,6 +37,18 @@ function schat_load_files_and_setup() {
 	//echo DOING_AJAX;
 	
 	define( 'CURRENT_MYSQL_TIME', $wpdb->get_var('select NOW()'));
+	
+
+	//enqueue the required script
+	add_action( 'wp_print_scripts', 'schat_load_js');
+	//add_action( 'admin_print_scripts', 'schat_load_js');
+
+	//load the chat bar when the user is logged in
+	add_action( 'wp_footer', 'schat_show_template');
+	//add_action( 'admin_footer', 'schat_show_template');
+
+	add_action("wp_print_styles","schat_load_css");
+	//add_action("admin_print_styles","schat_load_css");
 }
 
 // Set ajax url request
@@ -60,7 +72,7 @@ function schat_get_user_displayname( $user_id ) {
 }
 
 
-/* update user activity on login */
+/* setup, includes, variables and show chat */
 function schat_user_status_wp_login( $user_login, $user ) {
 	
 	global $wpdb;
@@ -70,13 +82,14 @@ function schat_user_status_wp_login( $user_login, $user ) {
 	$wpdb->chat_channels = $wpdb->prefix.SIMPLE_CHAT_DB_CHAT_CHANNELS;
     $wpdb->channel_users = $wpdb->prefix.SIMPLE_CHAT_DB_CHANNEL_USERS;
     $wpdb->chat_messages = $wpdb->prefix.SIMPLE_CHAT_DB_USER_MESSAGES;
-
+	
 	$row_exists = $wpdb->get_var( $wpdb->prepare( "SELECT user_id FROM $wpdb->chat_users WHERE user_id=%d", $user->ID ) );
 	
 	if(!$row_exists)
 		$wpdb->query( $wpdb->prepare( "INSERT INTO $wpdb->chat_users (user_id, is_online) VALUES (%d, 1)", $user->ID ) );
 	
 	schat_update_last_active( $user->ID );
+	
 }
 
 /* logout a user from chat session */
