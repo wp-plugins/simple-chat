@@ -186,10 +186,10 @@ get_name:function(friend){
 },
 
 get_avatar_src:function(friend){
-    var f=jQuery(friend);
-    var temp=f.find(".friend_list_item_orig_avatar_src").get(0);
-
-    return jQuery(temp).text();//return the name
+    var avatar=jQuery(friend).find("img");
+    
+    if(avatar)
+		return avatar.attr('src');//return the name
 },
 
 get_friend_id:function(elem){
@@ -361,6 +361,7 @@ var ChatWindow={
                 //alert("creating window 1");
                // jQuery("input.chat_with_user",win).val(user_id);//.html(name);
 		win.find(".win_header_image_link img").attr("src", avatar_src);
+		//alert(win.find(".win_header_image_link img").attr('style', 'border:2px solid blue'))
 		
 		// infinity scroll
 		win.find(".win_body").scroll( function(){

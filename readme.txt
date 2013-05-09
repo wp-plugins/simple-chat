@@ -1,21 +1,23 @@
 === Simple Chat ===
 Contributors: webarthur
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=74ABCDCXE7YEJ
+Donate link: http://tutzstyle.com/donate/
 Author URI: http://tutzstyle.com/
 Plugin URI: http://tutzstyle.com/portfolio/simple-chat-plugin-para-wordpress/
 Tags: chat, ajax, facebook, google plus, talk, google talk, bate-papo, facebook chat, msn
 License: GPLv2 or later
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 
 a simple chat based on google chat for logged users.
 
 == Description ==
 
-a simple chat based on google chat for logged users.
+a simple chat based on google chat for logged users. (Please, donate one or two dollars for the continuity of this and other open source projects)
 
 "Simplicity is the ultimate sophistication" -- Da Vinci
+
+Donate: http://tutzstyle.com/donate/
 
 
 == Installation ==
@@ -32,6 +34,9 @@ Upload plugin to your blog, activate it, then click on the Settings > Simple-cha
 
 == Changelog ==
 
+= 1.0.4 =
+* Fix an anavar bug in lacking-faces-2009 template
+
 = 1.0.3 =
 * For not logged in users chat shouldn't appears
 
@@ -46,7 +51,7 @@ Upload plugin to your blog, activate it, then click on the Settings > Simple-cha
 
 == Donate ==
 
-Donate one or two dollars. May seem very little money but it's very important to me. Thank you!
+Donate one or two dollars. May seem very little money but it's very important for me. Thank you!
 
 * PayPal: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=74ABCDCXE7YEJ
 * PagSeguro UOL: https://pagseguro.uol.com.br/checkout/v2/donation.html?receiverEmail=tutzstyle@gmail.com&currency=BRL

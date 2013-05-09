@@ -59,11 +59,15 @@ function schat_ajaxurl() {
 // get avatar url
 function get_gravatar_url( $email, $size=42 ) {
 	
-	$host = 'http://gravatar.com/avatar';
-    $hash = md5( strtolower( trim ( $email ) ) );
-    $default = get_option( 'avatar_default', 'mystery' );
+	$matchs = preg_match( '/src=[\'"]([^"]*)[\'"]/i', get_avatar( $email, 50 ), $array );
+	
+	return $array[1];
+	
+	//$host = 'http://gravatar.com/avatar';
+    //$hash = md5( strtolower( trim ( $email ) ) );
+    //$default = get_option( 'avatar_default', 'mystery' );
 
-    return $host . '/' . $hash . '?s=' . $size . '&d=mm';
+    //return $host . '/' . $hash . '?s=' . $size . '&d=mm';
 }
 
 function schat_get_user_displayname( $user_id ) {

@@ -139,7 +139,7 @@ function schat_get_online_users_list($echo =true) {
 			
 			$html.="<div class='friend_list_item'>";
 			$html.='<a class="online_friend '.$user_status.'" id="chat_with_' . $u->user_id . '">';
-			$html.=get_avatar( $u->user_email, 24); #, 'height' => 32, 'class' => 'friend-avatar'));
+			$html.=get_avatar( $u->user_email, 50); #, 'height' => 32, 'class' => 'friend-avatar'));
 			//??? $html.="<span class='disabled friend_list_item_orig_avatar_src'>" . get_avatar( $u->user_email, 50 ) . "</span>";
 			$html.='<span class="friend_list_item_name">' . $u->display_name . '</span>';
 			#$html.=bp_core_fetch_avatar(array('item_id' => $u->user_id, 'type' => 'thumb', 'width' => 32, 'height' => 32, 'class' => 'friend-avatar'));

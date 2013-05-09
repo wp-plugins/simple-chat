@@ -346,3 +346,4 @@ span.tab_name{
 #chat_buddylist .win_title_text { margin:0; }
 #chat_buddylist .win_content {padding:0;}
 #chat_buddylist .friend_list_item {padding:0;}
+#chat_buddylist .friend_list_item a img { width:24px; height:24px; }
