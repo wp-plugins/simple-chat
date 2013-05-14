@@ -22,5 +22,6 @@ function schat_settings() {
     // save fields
 	register_setting( 'simple-chat', 'schat_color' );
 	register_setting( 'simple-chat', 'schat_theme' );
+	register_setting( 'simple-chat', 'schat_notification' );
 	
 }

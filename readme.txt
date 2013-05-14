@@ -7,7 +7,7 @@ Tags: chat, ajax, facebook, google plus, talk, google talk, bate-papo, facebook 
 License: GPLv2 or later
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 
 a simple chat based on google chat for logged users.
 
@@ -33,6 +33,10 @@ Upload plugin to your blog, activate it, then click on the Settings > Simple-cha
 
 
 == Changelog ==
+
+= 1.0.4 =
+* Some CSS changes
+* Add notification sound effect
 
 = 1.0.4 =
 * Fix an anavar bug in lacking-faces-2009 template

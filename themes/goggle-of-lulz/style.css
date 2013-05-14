@@ -14,7 +14,7 @@
     bottom:0;
 	right:0;
     height:25px;
-	z-index:1000;
+	z-index:10000;
        
 }
 .schatbar .disabled{display:none;}
@@ -70,6 +70,7 @@
 
 .chat_tab .close{
     cursor:pointer;
+    display:inline-block;
 }
 .chat_tab .close span{
 	display: block;
@@ -208,7 +209,7 @@ div.friend_list_item a.online_friend.off { background:url("../images/off.png") n
 div.friend_list_item a.online_friend.afk { background:url("../images/afk.png") no-repeat center left transparent; }
 div.friend_list_item a.online_friend:hover{background-color:#eee;}
 div.friend_list_item a.online_friend img.avatar{display:none;}
-div.friend_list_item span {float:left;line-height:8px;width:130px;}
+div.friend_list_item span {float:left;line-height:8px;width:130px; color:#333;}
 span.clear{clear:both;display:block;}
 span.user_name{font-weight:bold;}
 
@@ -303,6 +304,7 @@ span.tab_name{
 	background: url("../images/on.png") no-repeat scroll center left transparent;
 	padding-right: 10px;
 	font-weight:bold;
+	margin-right:10px;
 }
 
 .chat_tab.on .chat_button span.tab_name { background-image: url("../images/on.png"); }
@@ -333,4 +335,10 @@ span.tab_name{
 }
 .chat_input_div textarea {
 	box-shadow:none;
+	font:13px Arial, Helvetica, sans-serif;
+	font-color:#333;
+	width:202px;
+	text-transform:none;
+	letter-spacing: 0;
+	color:#333;
 }

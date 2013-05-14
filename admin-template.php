@@ -72,6 +72,15 @@
 						</label-->
 					</td>
 				</tr>
+				<tr valign="top">
+					<th scope="row">Notification</th>
+					<td>
+						<label for="schat_notification">
+							<input name="schat_notification" type="checkbox" id="schat_notification" value="1"
+								<?php if( get_option('schat_notification') ) echo 'checked="checked"'; ?> /> Disable sound notification
+						</label>						
+					</td>
+				</tr>
 			</table>
 			
 			<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="<?php _e('Save changes') ?>"></p>

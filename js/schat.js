@@ -108,7 +108,7 @@ update_messages: function(ret, at) {
 		var messages = channel.messages;
 		var chat_win = jQuery("#chat_channel_"+channel.channel_id);//refrence to chat win object
 		
-		if ( !ChatWindow.exists(chat_win))
+		if ( !ChatWindow.exists(chat_win)) {
 			 chat_win=ChatWindow.create( 
 				channel.userdata.name,
 				channel.userdata.thumbnail, // 'thumbnail'
@@ -116,6 +116,11 @@ update_messages: function(ret, at) {
 				channel.channel_id,
 				channel.userdata.status
 			);
+			
+			// if "schat_notify_file" is defined
+			if( schat_notify_file )
+				chat_play_notification();
+		} 
 		else // update chat status
 			jQuery(chat_win).removeClass('on off afk busy').addClass(channel.userdata.status);
 
@@ -727,13 +732,19 @@ function find_parent_window(elem){
     
 }
 
-function chat_play_notification(){
+function chat_play_notification() {
 	//create global object
 	// soundManager.play('mySound','/path/to/an.mp3');
-	soundManager.createSound('chat_sound', bpchat.plugin_url+"assets/notification.wav");
+	//soundManager.createSound('chat_sound', bpchat.plugin_url+"assets/notification.wav");
 	//volume: 50
 	//});
-	soundManager.play('chat_sound');
+	//soundManager.play('chat_sound');
 
 	//chat_notification_sound.play();
+	
+	// destroy the last iframe
+	jQuery('#schat_notification').remove();
+	
+	// create a iframe and play sound
+	jQuery('body').append('<iframe id="schat_notification" src="'+schat_notify_file+'" style="display:none;"></iframe>');
 }

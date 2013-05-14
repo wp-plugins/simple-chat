@@ -5,7 +5,7 @@ Plugin URI: http://tutzstyle.com/portfolio/simple-chat-plugin-para-wordpress/
 Author URI: http://tutzstyle.com/
 Description:  a chat based on facebook chat, works only for registred and logged users.
 Author: Arthur Araújo
-Version: 1.0.4
+Version: 1.0.5
 
 */
 

@@ -53,7 +53,12 @@ function schat_initialize() {
 
 // Set ajax url request
 function schat_ajaxurl() {
-	echo '<script type="text/javascript">var ajaxurl = "'. admin_url('admin-ajax.php') .'";</script>';
+	echo '<script type="text/javascript">var ajaxurl = "'. admin_url('admin-ajax.php') .'";';
+	
+	if( !get_option('schat_notification') )
+		echo 'var schat_notify_file="'.SIMPLE_CHAT_URL.'assets/notification1.wav";';
+	
+	echo '</script>';
 }
 
 // get avatar url
